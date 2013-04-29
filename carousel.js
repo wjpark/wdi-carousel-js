@@ -19,6 +19,8 @@ function previous() {
     index -= 1;
   }
   img.setAttribute('src', imgArray[index]);
+  img.style.opacity = 0;
+  fadeIn();
 }
 
 function next() {
@@ -28,6 +30,19 @@ function next() {
     index += 1;
   }
   img.setAttribute('src', imgArray[index]);
+  img.style.opacity = 0;
+  fadeIn();
+}
+
+function fadeIn() {
+  var opacity = 0;
+  var timerIn = setInterval(function(){
+    opacity += 0.03;
+    img.style.opacity = opacity;
+    if(opacity > 1) {
+      clearInterval(timerIn);
+    }
+  }, 30);
 }
 
 var previousBtn = document.getElementById('previous');
