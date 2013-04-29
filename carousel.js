@@ -36,11 +36,11 @@ function next() {
 
 function fadeIn() {
   var opacity = 0;
-  var timerIn = setInterval(function(){
+  var timer = setInterval(function(){
     opacity += 0.03;
     img.style.opacity = opacity;
     if(opacity > 1) {
-      clearInterval(timerIn);
+      clearInterval(timer);
     }
   }, 30);
 }
